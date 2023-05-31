@@ -1,5 +1,5 @@
 import React from 'react'; 
-import "Contact.scss"; 
+import "./Contact.scss"; 
 import FacebookIcon from "@mui/icons-material/Facebook"; 
 import InstagramIcon from "@mui/icons-material/Instagram"; 
 import LinkedinIcon from "@mui/icons-material/LinkedIn"; 
