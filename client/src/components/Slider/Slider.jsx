@@ -31,10 +31,10 @@ export const Slider = () => {
             <img src={data[2]} alt="" />
         </div> 
         <div className="icons">
-            <div clasName="icon" onClick={prevSlide}>
+            <div className="icon" onClick={prevSlide}>
                 <WestOutlinedIcon /> 
             </div>
-            <div clasName="icon" onClick={nextSlide}>
+            <div className="icon" onClick={nextSlide}>
                 <EastOutlinedIcon /> 
             </div> 
         </div>
