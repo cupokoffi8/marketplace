@@ -45,7 +45,7 @@ export const Footer = () => {
         </div>
         <div className="right">
           <img 
-            src="img/payment.png" 
+            src="/img/payment.png" 
             alt="Payment" 
             height="80px" 
             width="auto" 

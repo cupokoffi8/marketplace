@@ -21,7 +21,7 @@ export const FeaturedProducts = ({type}) => {
             {error 
                 ? "Something went wrong" 
                 : loading
-                    ? <h1>LOADING...</h1>
+                    ? <h1 style={{display:"block", marginLeft:"auto", marginRight:"auto"}}>LOADING...</h1>
                     : data?.map((item) => (
                     <Card item={item} key={item.id} /> 
                 ))}
