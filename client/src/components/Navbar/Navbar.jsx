@@ -1,77 +1,51 @@
 import React, { useState } from 'react'; 
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; 
-import SearchIcon from '@mui/icons-material/Search'; 
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined"; 
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"; 
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined"; 
-import { Link } from 'react-router-dom'; 
-import { useSelector } from "react-redux"; 
-import "./Navbar.scss"; 
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import "./Navbar.scss";
 import Cart from '../Cart/Cart';
 
 export const Navbar = () => {
 
-  const [open, setOpen] = useState(false); 
-  const products = useSelector((state) => state.cart.products); 
 
-  return (
-    <div className='navbar'>
-        <div className='wrapper'>
-            <div className='left'>
-                <div className="item">
-                    <img 
-                        src="/img/en.jpeg" 
-                        alt="EN" 
-                        width="20px" 
-                        height="20px"
-                    /> 
-                    <KeyboardArrowDownIcon />
-                </div>
-                <div className="item">
-                    <span>USD</span>
-                    <KeyboardArrowDownIcon />
-                </div>
-                <div className="item">
-                    <Link className="link" to="/products/1">Women</Link> 
-                </div>
-                <div className="item">
-                    <Link className="link" to="/products/2">Men</Link> 
-                </div>
-            </div>
-            <div className='center'>
-                <Link className="link" to="/">
-                    <img 
-                        src="/img/sc-color-bar-transparent.png" 
-                        alt="Suzanne Clemente" 
-                        width="auto" 
-                        height="50px"
-                    />
-                </Link>
-            </div>
-            <div className='right'>
-                <div className="item">
-                    <Link className="link" to="/">About</Link>
-                </div>
-                <div className="item">
-                    <Link className="link" to="/">Contact</Link>
-                </div>
-                <div className="item">
-                    <Link className="link" to="/">Store</Link>
-                </div>
-                <div className="icons">
-                    <SearchIcon /> 
-                    <PersonOutlineOutlinedIcon /> 
-                    <FavoriteBorderOutlinedIcon /> 
-                    <div className="cartIcon" onClick={() => setOpen(!open)}> {/* open is initialized as false, so !open === true */} 
-                        <ShoppingCartOutlinedIcon /> 
-                        <span>{products.length}</span> 
-                    </div>
-                </div>
-            </div>
-        </div> 
-        {open && <Cart />}
-    </div>
-  ); 
-}; 
+    const [open, setOpen] = useState(false);
+    const products = useSelector((state) => state.cart.products);
 
-export default Navbar; 
+
+    return (
+        <>
+            <nav>
+                <Link to="/" className='logo' smooth={true} duration={1000} >
+                    <img src="/img/sc-color-bar-transparent.png" alt="Suzanne Clemente" />
+                        </Link>
+                            <input className='menu-btn' type='checkbox' id='menu-btn'/>
+                                <label className='menu-icon' for='menu-btn'>
+                                    <span className='nav-icon'></span>
+                                </label>
+                                <ul className='menu'>
+                                    <li><Link to="/products/1" className='active' smooth={true} duration={1000}>Totes</Link></li>
+                                    <li><Link to="/products/2" className='active' smooth={true} duration={1000}>Buckets</Link></li>
+                                    <li><Link to="/products/3" className='active' smooth={true} duration={1000}>Crosses</Link></li>
+                                    <li><Link to="/products/4" className='active' smooth={true} duration={1000}>Clutches</Link></li>
+                                    <li><Link to='contact' className='active' smooth={true} duration={1000}>Contact</Link></li>
+                                    <li>
+                                        <Link className='cart-mobile' onClick={() => setOpen(!open)} smooth={true} duration={1000}>
+                                            <img src="/img/shopping-cart.png" alt="" style={{ height: "30px", width: "30px", marginRight: "5px" }} />
+                                        </Link>
+                                        </li>
+                                    <li>
+                                        <div className="cartIcon" onClick={() => setOpen(!open)}> {/* open is initialized as false, so !open === true */}
+                                            <ShoppingCartOutlinedIcon />
+                                            <span>{products.length}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                {open && <Cart />}
+            </nav>
+        </>
+    );
+};
+
+
+export default Navbar;
+

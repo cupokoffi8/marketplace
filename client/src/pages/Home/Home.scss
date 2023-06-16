@@ -1,3 +1,19 @@
-.home {
-    
+.custom-shape-divider-top-1686950146 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1686950146 svg {
+    position: relative;
+    display: block;
+    width: calc(166% + 1.3px);
+    height: 261px;
+}
+
+.custom-shape-divider-top-1686950146 .shape-fill {
+    fill: #DA3A3A;
 }
