@@ -1,6 +1,7 @@
 .categories {
     display: flex; 
     height: 80vh; 
+    max-width: 100vw !important;
     gap: 10px; 
     margin: 10px; 
 
@@ -17,7 +18,7 @@
 
     .row {
         flex: 1; 
-        display: flex; 
+        // display: flex; 
         gap: 10px; 
         position: relative; 
         overflow: hidden; 
