@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { Home } from "./pages/Home/Home";
 import { Product } from "./pages/Product/Product";
 import { Products } from "./pages/Products/Products"; 
+import ShoppingCart from "./pages/Cart/Cart";
 import "./App.scss"; 
 
 const Layout = () => {
@@ -34,13 +35,17 @@ const router = createBrowserRouter([
         path: "/product/:id", 
         element: <Product />,
       }, 
+      {
+        path: "/cart",
+        element: <ShoppingCart />
+      }
     ],
   }, 
 ]);
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <RouterProvider router={router} /> 
     </div>
   );

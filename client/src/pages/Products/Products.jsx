@@ -31,6 +31,7 @@ export const Products = () => {
   return (
     <div className="products">
       <div className="left">
+        <br />
         <div className="filterItem">
           <h2>Product Categories</h2>
           {data?.map((item) => (
@@ -73,9 +74,11 @@ export const Products = () => {
         </div>
       </div>
       <div className="right">
+        <br />
+        <br />
         <img 
           className="catImg" 
-          src="https://images.pexels.com/photos/1374910/pexels-photo-1374910.jpeg" 
+          src={catId === 1 ? "/img/totes.jpg" : catId === 2 ? "/img/buckets.jpg" : catId === 3 ? "/img/crosses.jpg" : "/img/clutches.jpg"} 
           alt=""
           /> 
           <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} /> 

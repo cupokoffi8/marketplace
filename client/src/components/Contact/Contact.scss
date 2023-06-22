@@ -1,32 +1,55 @@
 .contact {
     background-color: #da3a3a;
     color: white;
-    padding: 15px; 
-    display: flex; 
-    justify-content: center; 
-
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  
     .wrapper {
-        width: 50%;
-        display: flex; 
-        align-items: center; 
-        justify-content: space-between; 
+      width: 100%;
+      max-width: 600px; /* Adjust the max-width as per your design */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
-
-    input {
-        padding: 10px; 
-        border: none; 
-        border-radius: 5px 0 0 5px; 
-    } 
-
-    button {
-        padding: 10px; 
-        color: white; 
+  
+    span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  
+    .mail {
+      display: flex;
+      width: 100%;
+  
+      input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+      }
+  
+      button {
+        padding: 10px;
+        color: white;
         background-color: rgb(39, 39, 39);
-        border-radius: 0 5px 5px 0; 
-        border: none; 
-    } 
-    .icons {
-        display: flex; 
-        gap: 10px; 
+        border-radius: 0 5px 5px 0;
+        border: none;
+      }
     }
-}
+  
+    .icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact .wrapper {
+      width: 90%;
+    }
+  }
+  

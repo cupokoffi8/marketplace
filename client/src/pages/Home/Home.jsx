@@ -7,23 +7,62 @@ import Contact from '../../components/Contact/Contact';
 
 export const Home = () => {
   return (
-    <div className="home">
+    <div className="home" style={{maxWidth: "100vw"}}>
       <Slider /> 
       <div>
-      <div style={{position: "relative", transform: "translateY(-100px)"}}>
-            <div class="custom-shape-divider-top-1686950146">
-              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                  <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-                  <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-                  <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-              </svg>
-            </div>
+        <div style={{position: "relative"}}>
+            <div class="custom-shape-divider-top-1687287121">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#DA3A3A" d="M40.3,-51.5C45.5,-35.1,38.5,-17.5,39.2,0.8C40,19.1,48.7,38.3,43.5,45.1C38.3,51.9,19.1,46.4,1.8,44.6C-15.6,42.8,-31.1,44.7,-45.2,37.9C-59.4,31.1,-72,15.6,-68.4,3.7C-64.7,-8.2,-44.7,-16.4,-30.5,-32.8C-16.4,-49.3,-8.2,-73.9,4.7,-78.6C17.5,-83.2,35.1,-67.9,40.3,-51.5Z" transform="translate(100 100)" />
+            </svg>
+          </div>
         </div>
+
+        <div style={{position: "relative"}}>
+          <div class="custom-shape-divider-top-1687287122">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#DA3A3A" d="M43.1,-56.5C58.3,-48.4,74.5,-38.9,80.6,-25C86.7,-11.2,82.6,7.2,76.1,23.9C69.5,40.6,60.5,55.8,47.4,67.8C34.3,79.8,17.2,88.8,-0.5,89.5C-18.1,90.1,-36.3,82.5,-47.7,69.9C-59.1,57.3,-63.7,39.8,-68.2,22.9C-72.8,5.9,-77.2,-10.3,-74.1,-25.4C-71,-40.5,-60.3,-54.4,-46.7,-63C-33.1,-71.7,-16.5,-75,-1.3,-73.2C14,-71.5,28,-64.6,43.1,-56.5Z" transform="translate(100 100)" />
+            </svg>
+          </div>
+        </div>
+
         <FeaturedProducts type="featured" /> 
       </div>
-      <Categories /> 
+      <div>
+        <div style={{position: "relative"}}>
+          <div class="custom-shape-divider-bottom-1687458140">
+              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                  <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+              </svg>
+          </div> 
+        </div>
+        <Categories /> 
+      </div>
+      <div>
+        <div style={{position: "relative"}}>
+          <div class="custom-shape-divider-top-1687459024">
+              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                  <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+              </svg>
+          </div>
+        </div>
+      </div>
       <FeaturedProducts type="trending" /> 
+      <div style={{position: "relative"}}>
+        <div class="custom-shape-divider-bottom-1687288090">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z" class="shape-fill"></path>
+          </svg>
+        </div>
+      </div>
       <Contact /> 
+      <div style={{position: "relative"}}>
+        <div class="custom-shape-divider-top-1687440419">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+          </svg>
+        </div>
+      </div>
     </div>
   )
 }

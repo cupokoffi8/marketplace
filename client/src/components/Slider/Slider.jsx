@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined"; 
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined"; 
 import "./Slider.scss"; 
-import image1 from "./content/1.png"; 
-import image2 from "./content/2.png"; 
-import image3 from "./content/3.png"; 
+import image1 from "./content/br.png"; 
+import image2 from "./content/am.png"; 
+import image3 from "./content/bm.png"; 
 
 export const Slider = () => { 
   

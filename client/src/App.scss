@@ -1,5 +1,9 @@
-.app {
+body {
+    margin: auto !important;
+}
 
+.app {
+    width: 100vw;
     .link {
         color: inherit; 
         text-decoration: none; 

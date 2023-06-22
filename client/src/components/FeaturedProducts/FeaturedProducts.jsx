@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from '../Card/Card';
 import "./FeaturedProducts.scss"; 
 import useFetch from '../../hooks/useFetch';
+import styled from '@emotion/styled';
 
 export const FeaturedProducts = ({type}) => { 
 
@@ -17,7 +18,8 @@ export const FeaturedProducts = ({type}) => {
         </div>
         <div className="bottom">
             {error 
-                ? "Something went wrong" 
+                ? (<br />,
+                  <h4>Something went wrong</h4>)
                 : loading
                     ? <h1 style={{display:"block", marginLeft:"auto", marginRight:"auto"}}>LOADING...</h1>
                     : data?.map((item) => (

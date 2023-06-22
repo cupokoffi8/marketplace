@@ -59,3 +59,16 @@
         }
     }
 }
+
+@media (max-width: 1000px) {
+    .footer {
+        margin: 0;
+        background-color: #da3a3a !important;
+        .top {
+            display: none;
+        }
+        .bottom {
+            display: none;
+        }
+    } 
+  }
