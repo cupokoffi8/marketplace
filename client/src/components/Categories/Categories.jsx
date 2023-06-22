@@ -36,7 +36,7 @@ const Categories = () => {
               Pride
             </Link>
             <img
-              src="https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg"
+              src="/img/pride.png"
               alt="Category 3"
             />
           </div>

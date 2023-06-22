@@ -4,11 +4,14 @@ import { Slider } from '../../components/Slider/Slider';
 import "./Home.scss"; 
 import Categories from '../../components/Categories/Categories';
 import Contact from '../../components/Contact/Contact';
+import About from '../../components/About/About';
 
 export const Home = () => {
   return (
     <div className="home" style={{maxWidth: "100vw"}}>
       <Slider /> 
+      <About /> 
+      <br /> 
       <div>
         <div style={{position: "relative"}}>
             <div class="custom-shape-divider-top-1687287121">
@@ -47,6 +50,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
+      <br /> 
       <FeaturedProducts type="trending" /> 
       <div style={{position: "relative"}}>
         <div class="custom-shape-divider-bottom-1687288090">

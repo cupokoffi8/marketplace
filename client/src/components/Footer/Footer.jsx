@@ -7,24 +7,26 @@ export const Footer = () => {
       <div className="top">
         <div className="item">
           <h1>Categories</h1>
-          <span>Women</span>
-          <span>Men</span>
-          <span>Shoes</span>
-          <span>Accessories</span>
-          <span>New Arrivals</span>
+          <span>Totes</span>
+          <span>Buckets</span>
+          <span>Crosses</span>
+          <span>Clutches</span>
         </div>
         <div className="item">
           <h1>Links</h1> 
           <span>FAQ</span>
           <span>Pages</span>
-          <span>Stores</span>
-          <span>Compare</span>
+          <span>Store</span>
           <span>Cookies</span>
         </div>
         <div className="item">
           <h1>About</h1>
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          Suzanne Clemente Handbags aren’t just beautifully styled and well made; the “Causes Series” 
+            line is a stylish way to show off one’s passion for a particular cause. The ribbons and colors 
+            of the “Causes Series” line represent the following causes: Back the Blue, Breast Cancer 
+            Awareness, AIDS Awareness, Autism Awareness, “Support Our Troops” and LGBT Awareness. We are 
+            currently developing a line for “Back the Blue”.
           </span>
         </div>
         <div className="item">
