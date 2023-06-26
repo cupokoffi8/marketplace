@@ -15,7 +15,8 @@
     width: calc(100% + 1.3px);
     height: 600px;
     margin-left: 45vw;
-    transform: translateY(10vh);
+    transform: translateY(-5vh);
+    transform: translateX(100px);
 }
 
 .custom-shape-divider-top-1687287121 .shape-fill {
@@ -29,8 +30,8 @@
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(180deg);
-    z-index: 2;
+    transform: rotate(180deg); 
+    z-index: -1; 
 }
 
 .custom-shape-divider-top-1687287122 svg {

@@ -4,29 +4,43 @@
     flex-direction: column;
     gap: 10px; 
     margin-bottom: 50px; 
+    z-index: 3 !important; 
+    border: 4px #212529 solid; 
+    border-radius: 32px; 
+    box-shadow: 5px 10px #888888;
 
     .image {
         width: 100%;
         height: 400px;
         overflow: hidden; 
         position: relative; 
+        z-index: 3 !important; 
+        border-radius: 30px; 
 
-        &:hover {
-            .secondImg {
-                z-index: 2; 
+        &:hover { 
+            .mainImg {
+                display: none;
             }
+            .secondImg {
+                display: block; 
+            } 
         }
 
         img {
             width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
+            height: 100%;
+            object-fit: contain; 
             position: absolute; 
+            background-color: white; 
         } 
 
         .mainImg {
-            z-index: 1;
+            display: block;
         } 
+
+        .secondImg {
+            display: none;
+        }
 
         span {
             position: absolute;
@@ -43,12 +57,20 @@
 
     h2 {
         font-size: 16px; 
-        font-weight: 400;
+        font-weight: bold; 
+        margin-left: 10px; 
     } 
+
+    hr {
+        width: 100%; 
+        height: 2px; 
+        background-color: #212529; 
+    }
 
     .prices {
         display: flex; 
         gap: 20px; 
+        margin-left: 10px; 
 
         h3 {
             font-size: 18px; 

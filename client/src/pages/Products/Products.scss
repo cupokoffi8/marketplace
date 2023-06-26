@@ -31,9 +31,12 @@
 
         .catImg {
             width: 100%; 
-            height: 300px; 
-            object-fit: cover; 
+            height: 800px; 
+            object-fit: contain; 
             margin-bottom: 50px; 
+            border: 4px #212529; 
+            border: double; 
+            border-radius: 10px;
         }
     }
 }

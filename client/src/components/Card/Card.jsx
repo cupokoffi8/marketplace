@@ -10,7 +10,8 @@ export const Card = ({item}) => {
           {item?.attributes.isNew && <span>New Season</span>}
           <img src={process.env.REACT_APP_UPLOAD_URL+item.attributes?.img?.data?.attributes?.url} alt="" className="mainImg" />
           <img src={process.env.REACT_APP_UPLOAD_URL+item.attributes?.img2?.data?.attributes?.url} alt="" className="secondImg" /> 
-        </div>
+        </div> 
+        <hr /> 
         <h2>{item?.attributes?.title}</h2>
         <div className="prices">
           <h3>${item.oldPrice || item?.attributes.price + 20}</h3>
