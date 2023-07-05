@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import Cart from '../Cart/Cart';
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [confirm, setConfirm] = useState(false); 
   const products = useSelector((state) => state.cart.products);
 
   const handleMobileMenuToggle = () => {
@@ -17,6 +18,15 @@ export const Navbar = () => {
   const handleMenuItemClick = () => {
     setMobileMenuOpen(false); // Close the mobile menu when a menu item is clicked
   };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get("success");
+
+    if (success === "true") {
+       setConfirm(true); 
+    }
+  }, []);
 
   return (
     <>
@@ -42,7 +52,7 @@ export const Navbar = () => {
           <li>
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
-              <span>{products.length}</span>
+              <span>{(!confirm) ? products.length : 0}</span>
             </div>
           </li>
         </ul>

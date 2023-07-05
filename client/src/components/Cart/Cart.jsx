@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, { useEffect } from 'react'; 
 import "./Cart.scss"; 
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined"; 
 import { useDispatch, useSelector } from "react-redux";
@@ -21,19 +21,30 @@ const Cart = () => {
 
   const handlePayment = async () => {
     try {
-      const stripe = await stripePromise; 
+      const stripe = await stripePromise;
 
       const res = await makeRequest.post("/orders", {
         products,
-      }); 
-      
+      });
+
+      const session = res.data.stripeSession;
       await stripe.redirectToCheckout({
-        sessionId: res.data.stripeSession.id, 
-      }); 
-    } catch(err) {
-      console.log(err); 
+        sessionId: session.id,
+      });
+
+    } catch (err) {
+      console.log(err);
     }
   }
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get("success");
+
+    if (success === "true") {
+      dispatch(resetCart()); 
+    }
+  }, []);
 
   return (
     <div className="cart">

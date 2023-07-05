@@ -26,8 +26,6 @@ export const Products = () => {
       ); 
   }; 
 
-  console.log(selectedSubCats);
-
   return (
     <div className="products">
       <div className="left">

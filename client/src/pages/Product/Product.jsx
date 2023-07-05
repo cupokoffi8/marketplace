@@ -61,7 +61,7 @@ export const Product = () => {
               <AddShoppingCartIcon />
               ADD TO CART
             </button>
-            <div className="links">
+            {/* <div className="links">
               <div className="item">
                 <FavoriteBorderIcon />
                 ADD TO WISH LIST
@@ -70,7 +70,7 @@ export const Product = () => {
                 <BalanceIcon />
                 ADD TO COMPARE
               </div>
-            </div>
+            </div> */}
             <div className="info">
               <span>Vendor: Suzanne Clemente&nbsp;</span>
               <span>Product Type: Tote&nbsp;</span>
