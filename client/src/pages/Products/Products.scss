@@ -1,42 +1,84 @@
 .products {
-    padding: 30px 50px; 
-    display: flex; 
+    display: flex;
+  }
+  
+  .left {
+    width: 25%;
+    background-color: #f2f2f2;
+    transition: width 0.3s ease;
+  }
+  
+  .right {
+    width: 75%;
+    background-color: #ffffff;
+    position: relative;
+  }
 
+  .catImg {
+    width: 90vw; 
+    height: 250px; 
+    object-fit: contain; 
+    margin-bottom: 50px; 
+    border: 4px #212529; 
+    border: double; 
+    border-radius: 10px; 
+    transform: translateX(5vw);;  
+  }
+  
+  .minimized {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .toggleSidebar {
+    position: absolute;
+    top: 15%;
+    left: -5px;
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: left 0.3s ease;
+    z-index: 2;
+  }
+  
+  .toggleIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .products {
+      flex-direction: column;
+    }
+  
     .left {
-        flex: 1; 
-        position: sticky; 
-        height: 100%; 
-        top: 50px; 
-
-        .filterItem {
-            margin-bottom: 30px; 
-
-            h2 {
-                font-weight: 400; 
-                margin-bottom: 20px; 
-            } 
-
-            .inputItem {
-                margin-bottom: 10px; 
-
-                label {
-                    margin-left: 10px; 
-                }
-            }
-        }
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 1;
+    }
+  
+    .right {
+      margin-top: 60px;
+    }
+  
+    .toggleSidebar {
+      top: 10px;
     } 
 
-    .right {
-        flex: 3; 
-
-        .catImg {
-            width: 100%; 
-            height: 800px; 
-            object-fit: contain; 
-            margin-bottom: 50px; 
-            border: 4px #212529; 
-            border: double; 
-            border-radius: 10px;
-        }
+    .catImg {
+        width: 90vw; 
+        height: 100px; 
+        object-fit: contain; 
+        margin-bottom: 50px; 
+        border: 4px #212529; 
+        border: double; 
+        border-radius: 10px;
     }
-}
+  }
+  
