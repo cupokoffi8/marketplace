@@ -2,10 +2,17 @@
     display: flex;
   }
   
-  .left {
-    width: 25%;
+  .top {
+    width: 100%;
     background-color: #f2f2f2;
-    transition: width 0.3s ease;
+    transition: height 0.3s ease;
+    overflow: hidden;
+  }
+
+  .left {
+    background-color: #E5B181;
+    padding-left: 10px; 
+    padding-right: 10px;
   }
   
   .right {
@@ -13,53 +20,52 @@
     background-color: #ffffff;
     position: relative;
   }
-
+  
   .catImg {
-    width: 90vw; 
-    height: 250px; 
-    object-fit: contain; 
-    margin-bottom: 50px; 
-    border: 4px #212529; 
-    border: double; 
-    border-radius: 10px; 
-    transform: translateX(5vw);;  
+    width: 70vw;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 50px;
+    border: 4px #212529;
+    border: double;
+    border-radius: 10px;
+    transform: translateX(5vw);
   }
   
   .minimized {
-    width: 0;
-    overflow: hidden;
+    height: 0;
   }
   
   .toggleSidebar {
     position: absolute;
-    top: 15%;
-    left: -5px;
+    top: -5px;
+    right: 5px;
     width: 40px;
     height: 40px;
-    background-color: #f2f2f2;
+    background-color: #7DBBC3;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: left 0.3s ease;
+    transition: top 0.3s ease;
     z-index: 2;
   }
   
   .toggleIcon {
     width: 20px;
     height: 20px;
-  }
+  } 
   
   @media (max-width: 767px) {
     .products {
       flex-direction: column;
     }
   
-    .left {
+    .top {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
+      width: 100%;
       z-index: 1;
     }
   
@@ -68,17 +74,18 @@
     }
   
     .toggleSidebar {
-      top: 10px;
-    } 
-
+      top: -15px;
+      right: 25%;
+    }
+  
     .catImg {
-        width: 90vw; 
-        height: 100px; 
-        object-fit: contain; 
-        margin-bottom: 50px; 
-        border: 4px #212529; 
-        border: double; 
-        border-radius: 10px;
+      width: 90vw;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 50px;
+      border: 4px #212529;
+      border: double;
+      border-radius: 10px;
     }
   }
   

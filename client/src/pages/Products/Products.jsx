@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./Products.scss";
 import List from '../../components/List/List';
 import useFetch from '../../hooks/useFetch';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 
 export const Products = () => {
   const catId = parseInt(useParams().id);
@@ -28,15 +28,14 @@ export const Products = () => {
   };
 
   const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
+    setSidebarVisible(!sidebarVisible); 
   };
 
   return (
     <div className="products">
       <div className={`left ${sidebarVisible ? '' : 'minimized'}`}>
         <br />
-        <br /> 
-        <br /> 
+        <br />
         <div className="filterItem">
           <h2>Product Categories</h2>
           {data?.map((item) => (
@@ -80,11 +79,13 @@ export const Products = () => {
       </div>
       <div className="right">
         <div className={`toggleSidebar ${sidebarVisible ? '' : 'minimized'}`}>
-          <FiArrowRight className="toggleIcon" onClick={toggleSidebar} />
+          {(!sidebarVisible) 
+            ? <FiArrowDown className="toggleIcon" onClick={toggleSidebar} />
+            : <FiArrowUp className="toggleIcon" onClick={toggleSidebar} />}
         </div>
         <br />
         <br />
-        <br /> 
+        <br />
         <img
           className="catImg"
           src={
