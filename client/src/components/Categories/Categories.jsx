@@ -1,8 +1,10 @@
-import React from 'react';
-import "./Categories.scss";
+import React, { useEffect } from 'react';
+import "./Categories.scss"; 
+import $ from 'jquery'; 
 import { Link } from 'react-router-dom';
 
 const Categories = () => {
+
   return (
     <div className='categories'>
       <div className="category-row">

@@ -7,7 +7,7 @@ export const Card = ({item}) => {
     <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
         <div className="image"> 
-          {item?.attributes.isNew && <span>New Season</span>}
+          {item?.attributes.isNew && <span>New</span>}
           <img src={item.attributes?.img?.data?.attributes?.url} alt="" className="mainImg" />
           <img src={item.attributes?.img2?.data?.attributes?.url} alt="" className="secondImg" /> 
         </div> 

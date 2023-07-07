@@ -9,7 +9,8 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [confirm, setConfirm] = useState(false); 
-  const products = useSelector((state) => state.cart.products);
+  const products = useSelector((state) => state.cart.products); 
+  const isMobileScreen = window.innerWidth <= 767;
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -32,7 +33,7 @@ export const Navbar = () => {
     <>
       <nav>
         <Link to="/" className='logo' smooth={true} duration={1000}>
-          <img src="/img/sc-color-bar-transparent.png" alt="Suzanne Clemente" />
+          <img src="/img/sc-color-bar-transparent.png" alt="Suzanne Clemente" style={{transform: `translateX(${isMobileScreen ? '-25px' : '0px'}`}}/>
         </Link>
         <input className='menu-btn' type='checkbox' id='menu-btn' checked={mobileMenuOpen} onChange={handleMobileMenuToggle} />
         <label className='menu-icon' htmlFor='menu-btn'>

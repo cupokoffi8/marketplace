@@ -1,13 +1,16 @@
 .list {
-    display: flex; 
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    padding-left: 60px; 
-    padding-right: 60px;
+    display: flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+    padding-left: 80px;
+    padding-right: 80px; 
+    transform: translateX(2.5vw);
 }
 
 @media (max-width: 767px) {
     .list {
-        padding-left: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        transform: translateX(0px);
     }
 }

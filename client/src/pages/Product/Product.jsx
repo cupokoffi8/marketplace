@@ -6,7 +6,8 @@ import BalanceIcon from '@mui/icons-material/Balance';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/cartReducer';
+import { addToCart } from '../../redux/cartReducer'; 
+import { Oval } from 'react-loader-spinner'; 
 
 export const Product = () => {
   const id = useParams().id;
@@ -16,13 +17,28 @@ export const Product = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
+  window.scrollTo(0, 0); 
+
   return (
     <>
     <br />
       <br />
       <div className="product">
         {loading ? (
-          <h1 style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}>LOADING...</h1>
+          <h1 style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}>
+            <Oval
+              height={80}
+              width={80}
+              color="#da3a3a"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+              ariaLabel='oval-loading'
+              secondaryColor="#212529"
+              strokeWidth={2}
+              strokeWidthSecondary={2}
+            />
+          </h1>
         ) : (
         <>
           <div className="left">

@@ -6,6 +6,7 @@ import { Product } from "./pages/Product/Product";
 import { Products } from "./pages/Products/Products"; 
 import ShoppingCart from "./pages/Cart/Cart";
 import "./App.scss"; 
+import Contact from "./pages/Contact-Us/Contact-Us";
 
 const Layout = () => {
   return (
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <ShoppingCart />
+      }, 
+      {
+        path: "/contact", 
+        element: <Contact /> 
       }
     ],
   }, 

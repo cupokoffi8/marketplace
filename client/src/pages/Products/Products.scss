@@ -1,18 +1,22 @@
+*{
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .products {
-    display: flex;
+    display: flex; 
+    border-bottom: 2px #212529 solid;
   }
   
   .top {
     width: 100%;
-    background-color: #f2f2f2;
     transition: height 0.3s ease;
     overflow: hidden;
   }
-
+  
   .left {
-    background-color: #E5B181;
     padding-left: 10px; 
     padding-right: 10px;
+    padding-bottom: 10px;  
   }
   
   .right {
@@ -39,16 +43,18 @@
   .toggleSidebar {
     position: absolute;
     top: -5px;
-    right: 5px;
-    width: 40px;
+    width: 100%;
     height: 40px;
-    background-color: #7DBBC3;
+    background-color: #FED766;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: top 0.3s ease;
     z-index: 2;
+    border-radius: 5px;
+    border-bottom: #212529 2px solid; 
+    border-top: #212529 2px solid; 
   }
   
   .toggleIcon {
@@ -61,31 +67,24 @@
       flex-direction: column;
     }
   
-    .top {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-    }
-  
     .right {
+      width: 100%;
       margin-top: 60px;
     }
   
     .toggleSidebar {
-      top: -15px;
-      right: 25%;
+      width: 100%;
     }
   
     .catImg {
       width: 90vw;
-      height: 100px;
+      height: 250px;
       object-fit: contain;
+      margin-top: -25px;
       margin-bottom: 50px;
       border: 4px #212529;
       border: double;
-      border-radius: 10px;
+      border-radius: 10px; 
     }
   }
   
