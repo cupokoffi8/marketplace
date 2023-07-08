@@ -6,6 +6,7 @@ import useFetch from '../../hooks/useFetch';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 
 export const Products = () => {
+  window.scrollTo(0, 0); 
   const catId = parseInt(useParams().id);
   const [maxPrice, setMaxPrice] = useState(300);
   const [sort, setSort] = useState();

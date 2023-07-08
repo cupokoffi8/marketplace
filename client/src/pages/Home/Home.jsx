@@ -7,6 +7,7 @@ import Contact from '../../components/Contact/Contact';
 import About from '../../components/About/About';
 
 export const Home = () => {
+  window.scrollTo(0, 0); 
   return (
     <div className="home" style={{maxWidth: "100vw"}}>
       <Slider /> 

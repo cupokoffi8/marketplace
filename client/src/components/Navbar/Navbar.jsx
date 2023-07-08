@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
@@ -8,8 +8,9 @@ import Cart from '../Cart/Cart';
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [confirm, setConfirm] = useState(false); 
-  const products = useSelector((state) => state.cart.products); 
+  const [confirm, setConfirm] = useState(false);
+  const cartRef = useRef(null); // Reference to the cart element
+  const products = useSelector((state) => state.cart.products);
   const isMobileScreen = window.innerWidth <= 767;
 
   const handleMobileMenuToggle = () => {
@@ -20,20 +21,49 @@ export const Navbar = () => {
     setMobileMenuOpen(false); // Close the mobile menu when a menu item is clicked
   };
 
+  const handleCartIconClick = () => {
+    setOpen(!open);
+  };
+
+  const handleCloseCart = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const success = urlParams.get("success");
 
     if (success === "true") {
-       setConfirm(true); 
+      setConfirm(true);
     }
   }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        cartRef.current &&
+        !cartRef.current.contains(event.target)
+      ) {
+        handleCloseCart();
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [open]);
 
   return (
     <>
       <nav>
         <Link to="/" className='logo' smooth={true} duration={1000}>
-          <img src="/img/sc-color-bar-transparent.png" alt="Suzanne Clemente" style={{transform: `translateX(${isMobileScreen ? '-25px' : '0px'}`}}/>
+          <img src="/img/sc-color-bar-transparent.png" alt="Suzanne Clemente" style={{ transform: `translateX(${isMobileScreen ? '-25px' : '0px'}` }} />
         </Link>
         <input className='menu-btn' type='checkbox' id='menu-btn' checked={mobileMenuOpen} onChange={handleMobileMenuToggle} />
         <label className='menu-icon' htmlFor='menu-btn'>
@@ -51,13 +81,15 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
-            <div className="cartIcon" onClick={() => setOpen(!open)}>
+            <div className="cartIcon" onClick={handleCartIconClick}>
               <ShoppingCartOutlinedIcon />
               <span>{(!confirm) ? products.length : 0}</span>
             </div>
           </li>
         </ul>
-        {open && <Cart />}
+        <div className={`cartContainer ${open ? 'open' : ''}`} ref={cartRef}>
+          {open && <Cart onClose={handleCloseCart} />}
+        </div>
       </nav>
     </>
   );

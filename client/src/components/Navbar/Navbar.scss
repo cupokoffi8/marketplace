@@ -86,7 +86,16 @@ nav{
             background: #212529; 
         }
     }
-    
+    .cartContainer {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 999;
+      }
+      
+      .cartContainer.open {
+        display: block;
+      }
     
     @media(max-width:1100px){
     .cart-mobile{
