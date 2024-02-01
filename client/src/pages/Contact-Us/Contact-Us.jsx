@@ -9,7 +9,9 @@ const Result = () => {
 }
 
 const Contact = () => {
-  const [result, showResult] = useState(false); 
+  const [result, showResult] = useState(false);
+  
+  window.scrollTo(0, 0); 
 
   const sendEmail = (e) => {
     e.preventDefault();
