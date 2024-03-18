@@ -11,7 +11,7 @@ const useFetch = (url) => {
       try {
         setLoading(true);
         // Replace 'https' with 'http' in the base URL
-        const httpBaseUrl = `http://${process.env.REACT_APP_API_URL}`;
+        const httpBaseUrl = `${process.env.REACT_APP_API_URL}`;
         const res = await makeRequest({ baseURL: httpBaseUrl }).get(url);
         setData(res.data.data);
       } catch (err) {
