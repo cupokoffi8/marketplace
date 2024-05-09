@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { makeRequest } from "../makeRequest";
 
-const useFetch = (url) => {
+const useFetch = (endpoint) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -10,8 +10,10 @@ const useFetch = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        // Replace 'https' with 'http' in the base URL
-        const httpBaseUrl = `${process.env.REACT_APP_API_URL}`;
+        console.log("Requesting URL:", endpoint); // Add this line for debugging
+        // Construct the complete URL including the endpoint
+        const httpBaseUrl = `https://${process.env.REACT_APP_API_URL}`;
+        const url = `${httpBaseUrl}${endpoint}`;
         const res = await makeRequest({ baseURL: httpBaseUrl }).get(url);
         setData(res.data.data);
       } catch (err) {
@@ -20,7 +22,7 @@ const useFetch = (url) => {
       setLoading(false);
     };
     fetchData();
-  }, [url]);
+  }, [endpoint]);
 
   return { data, loading, error };
 };

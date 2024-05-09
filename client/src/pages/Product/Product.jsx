@@ -16,6 +16,7 @@ export const Product = () => {
 
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+  console.log(useFetch(`/products/${id}?populate=*`));
 
   window.scrollTo(0, 0); 
 
